@@ -8,4 +8,13 @@ RSpec.describe Song, type: :model do
       expect(song.errors).to have_key(:name)
     end
   end
+
+  describe "associations" do
+    let(:artist) { create :artist }
+    it "belongs to an artist" do
+      song = artist.songs.new(name:"Love is Easy")
+
+      expect(song.artist).to eq(artist)
+    end
+  end
 end
