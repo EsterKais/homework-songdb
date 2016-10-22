@@ -1,6 +1,12 @@
 <h1> Artists </h1>
-<ul>
-<% @artists.each do |artist| %>
-  <li><%=artist.name%></li>
-<% end %>
-</ul>
+  <h2> Order By: </h2>
+
+    <%= link_to "Name", order_by_name_artists_path %>
+    <%= link_to "Date Added", order_by_date_artists_path %>
+
+
+    <ul>
+    <% @artists.each do |artist| %>
+      <li><%=artist.name%></li>
+    <% end %>
+    </ul>
