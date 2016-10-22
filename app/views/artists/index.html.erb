@@ -7,6 +7,11 @@
 
     <ul>
     <% @artists.each do |artist| %>
-      <li><%=artist.name%></li>
+    <% @artist = artist %>
+      <li><%=artist.name%>
+        <% @artist.photos.each do |photo| %>
+        <%= image_tag photo.artist_image %>
+        <% end %>
+      </li>
     <% end %>
     </ul>
