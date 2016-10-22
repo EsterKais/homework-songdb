@@ -1,7 +1,7 @@
 class Artist < ApplicationRecord
 # RELATIONSHIPS
   has_many :songs, dependent: :destroy
-
+  has_many :photos, dependent: :destroy
 # VALIDATIONS
   validates :name, presence: true
 

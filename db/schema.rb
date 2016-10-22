@@ -10,15 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014202751) do
+ActiveRecord::Schema.define(version: 20161022133804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artist_photos", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.string   "artist_image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["artist_id"], name: "index_artist_photos_on_artist_id", using: :btree
+  end
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.string   "artist_image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["artist_id"], name: "index_photos_on_artist_id", using: :btree
   end
 
   create_table "songs", force: :cascade do |t|
@@ -29,5 +45,7 @@ ActiveRecord::Schema.define(version: 20161014202751) do
     t.index ["artist_id"], name: "index_songs_on_artist_id", using: :btree
   end
 
+  add_foreign_key "artist_photos", "artists"
+  add_foreign_key "photos", "artists"
   add_foreign_key "songs", "artists"
 end
