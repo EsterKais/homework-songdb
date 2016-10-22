@@ -1,17 +1,20 @@
 <h1> Artists </h1>
   <h2> Order By: </h2>
-
+<!-- FILTERING -->
     <%= link_to "Name", order_by_name_artists_path %>
     <%= link_to "Date Added", order_by_date_artists_path %>
+<!-- END OF FILTERING -->
 
-
+<!-- ARTIST LIST -->
     <ul>
-    <% @artists.each do |artist| %>
-    <% @artist = artist %>
-      <li><%=artist.name%>
-        <% @artist.photos.each do |photo| %>
-        <%= image_tag photo.artist_image %>
-        <% end %>
-      </li>
-    <% end %>
+      <% @artists.each do |artist| %>
+        <% @artist = artist %>
+        <li>
+          <%= link_to artist.name, artist_path(artist.id) %>
+            <% @artist.photos.each do |photo| %>
+              <%= image_tag photo.artist_image %>
+            <% end %>
+        </li>
+      <% end %>
     </ul>
+<!-- END OF ARTIST LIST -->
