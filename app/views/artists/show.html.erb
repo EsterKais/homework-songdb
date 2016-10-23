@@ -1,8 +1,24 @@
-<h1><%= @artist.name %></h1>
+<div class="container">
+  <div class="well">
+    <%#= link_to "New Song", new_song_path, remote: true, class: "btn btn-primary" %>
+    <div class="modal-header">
+    <h3>New Song for <%= @artist.name %></h3>
+    </div>
+    <%= render "songs/form" %>
+  </div>
+  <div class="new-song"></div>
 
-<h2> Songs: </h2>
-  <ul>
-    <% @songs.each do |song| %>
-      <li><%= song.name %></li>
-    <% end %>
-  </ul>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </thead>
+    <tbody class="song-show">
+      <%= render "/songs/show" %>
+    </tbody>
+  </table>
+  <td><%= link_to "Delete All", "/artists/#{@artist.id}/delete", remote: true, class: "btn btn-danger" %></td>
+<div id="song-modal" class="modal fade"></div>

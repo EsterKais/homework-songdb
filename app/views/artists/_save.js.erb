@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if @artist.errors.any? %>
+  <% @artist.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $(".song-show").html("<%= escape_javascript(render 'show') %>")
+  $("#song-delete-modal").modal("hide")
+<% end %>
