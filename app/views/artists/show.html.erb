@@ -1,6 +1,10 @@
 <div class="container">
   <div class="well">
-    <%= link_to "New Song", new_song_path, remote: true, class: "btn btn-primary" %>
+    <%#= link_to "New Song", new_song_path, remote: true, class: "btn btn-primary" %>
+    <div class="modal-header">
+    <h3>New Song for <%= @artist.name %></h3>
+    </div>
+    <%= render "songs/form" %>
   </div>
   <div class="new-song"></div>
 

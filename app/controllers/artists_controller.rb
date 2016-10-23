@@ -8,10 +8,10 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @songs = @artist.songs
+    @song = Song.new
 
-
-    # @songs = Song.all
-    # @song = Song.find(params[:song_id])
+    #@songs = Song.all
+    #@song = Song.find(params[:song_id])
     # @photos = @product.photos
   end
 

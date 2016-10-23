@@ -4,5 +4,5 @@ class Song < ApplicationRecord
 
 # VALIDATIONS
   validates :name, presence: true
-  
+
 end
