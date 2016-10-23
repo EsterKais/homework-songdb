@@ -4,6 +4,6 @@ $("ul.errors").html("")
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
-  $(".song-show").html("<%= escape_javascript(render 'artists/show.html.erb') %>")
+  $(".song-show").html("<%= escape_javascript(render 'show') %>")
   $("#song-modal").modal("hide")
 <% end %>
