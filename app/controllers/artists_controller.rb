@@ -15,6 +15,18 @@ class ArtistsController < ApplicationController
     # @photos = @product.photos
   end
 
+  def delete
+    @artist = Artist.find(params[:artist_id])
+  end
+
+  def destroy
+    @artist = Artist.find(params[:id])
+    # @songs = Song.find(params[:id])
+    @songs = @artist.songs
+    # @songs = Song.all
+    @songs.destroy
+  end
+
 # FILTERING SYSTEM
   def order_by_name
     @artists = Artist.order_by_name

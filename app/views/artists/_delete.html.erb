@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+    <h3>Delete All Songs</h3>
+  </div>
+  <div class="modal-body">
+  <ul class="errors"></ul>
+  Are you sure you wish to delete all songs from <b><%= @artist.name %></b>?
+
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Yes, Delete All Songs", artist_path(id: @artist.id), method: :delete, remote: true, class: "btn btn-danger" %>
+    <%= link_to "No, Please Don't", "#", class: "btn btn-default", data: { dismiss: "modal" } %>
+  </div>
+  </div>
+</div>
