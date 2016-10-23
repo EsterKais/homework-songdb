@@ -10,4 +10,18 @@ Rails.application.routes.draw do
   end
 
   resources :photos
+
+  resources :songs, only: [:new, :create, :destroy] do
+    get 'delete'
+  end
 end
+
+# get '/artists/:id/songs/:song_id/delete' => "songs#delete"
+# delete '/artists/:id/songs/:song_id' => "songs#destroy"
+
+
+# get '/artists/:id/songs/:song_id/delete' => "songs#delete"
+# delete '/artists/:id/songs/:song_id' => "songs#destroy"
+# resources :songs, only: [:new, :create, :destroy] do
+#   get "delete"
+# end

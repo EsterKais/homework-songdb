@@ -4,22 +4,24 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
-# FILTERING SYSTEM
-    def order_by_name
-      @artists = Artist.order_by_name
-      render action: :index
-    end
-
-    def order_by_date
-      @artists = Artist.order_by_date
-      render action: :index
-    end
-# END OF FILTERING SYSTEM
 
   def show
     @artist = Artist.find(params[:id])
+    @songs = Song.all
     @songs = @artist.songs
+    #@song = Song.find(params[:song_id])
     # @photos = @product.photos
   end
 
+# FILTERING SYSTEM
+  def order_by_name
+    @artists = Artist.order_by_name
+    render action: :index
+  end
+
+  def order_by_date
+    @artists = Artist.order_by_date
+    render action: :index
+  end
+# END OF FILTERING SYSTEM
 end
