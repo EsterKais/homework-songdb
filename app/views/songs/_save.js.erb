@@ -4,6 +4,7 @@ $("ul.errors").html("")
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
+  $(".form-control").val(null)
   $(".song-show").html("<%= escape_javascript(render 'show') %>")
   $("#song-modal").modal("hide")
 <% end %>
