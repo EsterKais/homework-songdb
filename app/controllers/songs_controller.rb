@@ -1,12 +1,18 @@
 class SongsController < ApplicationController
 
   def new
-    @song = Song.new
+    # @song = Song.new
   end
 
   def create
-    @songs = Song.all
     @song = Song.create(song_params)
+    artist_id = @song.artist_id
+    @artist = Artist.find(artist_id)
+    @songs = @artist.songs
+    # @songs = Song.find(:artist_id = artist_id)
+
+    # @artist = Artist.find(params[id: artist_id])
+
   end
 
   def delete

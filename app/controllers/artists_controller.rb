@@ -9,22 +9,6 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @songs = @artist.songs
     @song = Song.new
-
-    #@songs = Song.all
-    #@song = Song.find(params[:song_id])
-    # @photos = @product.photos
-  end
-
-  def delete
-    @artist = Artist.find(params[:artist_id])
-  end
-
-  def destroy
-    @artist = Artist.find(params[:id])
-    # @songs = Song.find(params[:id])
-    @songs = @artist.songs
-    # @songs = Song.all
-    @songs.destroy
   end
 
 # FILTERING SYSTEM
