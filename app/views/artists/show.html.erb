@@ -1,24 +1,24 @@
 <div class="container">
-  <div class="well">
-    <div class="modal-header">
-      <h3>New Song for <%= @artist.name %></h3>
-    </div>
-          <%= render "songs/form" %>
-  </div>
-
+<h1> Songs by <%= @artist.name %></h1>
+<div class="table-positioning">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Name</th>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
       </tr>
     </thead>
+
     <tbody class="song-show">
         <%= render "/songs/show" %>
     </tbody>
   </table>
+</div>
+<div class="deleteAll"><%= link_to "Delete All", "/artists/#{@artist.id}/delete", remote: true, class: "btn btn-danger" %></div>
 
-  <td><%= link_to "Delete All", "/artists/#{@artist.id}/delete", remote: true, class: "btn btn-danger" %></td>
 
-  <div id="song-modal" class="modal fade"></div>
+  <div class="modal-header"><h4>Add a new song for <%= @artist.name %></h4></div>
+    <%= render "songs/form" %>
+
+
+<div id="song-modal" class="modal fade"></div>
+
+</div>
