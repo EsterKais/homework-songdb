@@ -4,23 +4,6 @@
 $full-width:  1020px;
 $min-width:   1020px;
 
-.container {
-  width: 1020px;
-
-  .filtering {
-    display: flex;
-    flex-direction: row;
-
-    .filtering-header{
-    }
-    
-    a {
-      text-decoration: none;
-      color: black;
-    }
-  }
-
-}
 .header{
   display: flex;
   flex-direction: row;
@@ -48,14 +31,123 @@ $min-width:   1020px;
   }
 }
 .border-length{
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #FD4813;
   width: 85%;
   margin: auto;
 }
+
 .footer{
   background-color: black;
-  color: white;
+  color: #FD4813;
   text-align: center;
   vertical-align: middle;
   height: 50px;
+  padding-top: 10px;
+}
+
+.container {
+  max-width: 1020px;
+  min-width: 1020px;
+  max-height: 900px;
+  min-height: 900px;
+
+  // homepage
+
+    .artistsH1{
+      text-align: center;
+      // border: 1px solid black;
+
+    }
+
+    .filtering {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-around;
+      // border: 1px solid black;
+
+      .filter-items{
+
+          font-size: 20px;
+          list-style: none;
+          display: inline-block;
+
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+
+  .artists{
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .artist-box{
+
+      display: flex;
+      flex-direction: column;
+
+
+      .imagelink{
+        height: 325px;
+        width: 350px;
+        border: ridge 5px black;
+
+      }
+
+      .artist-name{
+        font-size: 20px;
+        text-align: center;
+        color: black;
+        font-weight: bolder;
+      }
+
+    }
+  }
+// end of homepage
+// show page
+  h1{
+    text-align: center;
+  }
+  h4{
+    text-align: center;
+  }
+  .table-positioning{
+    align-items: center;
+    margin-left: 255px;
+
+    table {
+      width: 500px;
+      table-layout: fixed;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  .deleteAll{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .btn-primary{
+    background: #FD4813;
+    border-color: #FD4813;
+    color: black;
+  }
+  .btn{
+    background: #FD4813;
+    border-color: #FD4813;
+    color: black;
+  }
+  .modal-header{
+    border-color: #FD4813;
+  }
+
 }

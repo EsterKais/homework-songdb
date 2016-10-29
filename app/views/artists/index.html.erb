@@ -1,26 +1,25 @@
 <div class="container">
-  <h1> Artists </h1>
-    <div class="filtering">
-      <div class="filtering-header"> Order By: </div>
+  <h1 class="artistsH1"> Artists </h1>
   <!-- FILTERING -->
-        <ul class="filter-items">
-          <li><%= link_to "Name", order_by_name_artists_path %></li>
-          <li><%= link_to "Date Added", order_by_date_artists_path %></li>        </ul>
+    <div class="filtering">
+      <div class="filter-items"><%= link_to "Order by Name", order_by_name_artists_path %></div>
+      <div class="filter-items"><%= link_to "Order by Latest", order_by_date_artists_path %></div>
     </div>
   <!-- END OF FILTERING -->
 
   <!-- ARTIST LIST -->
-      <ul>
+      <ul class="artists">
         <% @artists.each do |artist| %>
           <% @artist = artist %>
-          <li>
-            <%= link_to artist.name, artist_path(artist.id) %>
-              <% @artist.photos.each do |photo| %>
-                <%= image_tag photo.artist_image %>
+          <li class="artist-box">
+            <% @artist.photos.each do |photo| %>
+              <%= link_to artist_path(artist.id) do %>
+                <%= image_tag photo.artist_image, :class => "imagelink" %>
+                <div class="artist-name"><%= artist.name %></div>
               <% end %>
+            <% end %>
           </li>
         <% end %>
       </ul>
-  <!-- END OF ARTIST LIST -->
-  <!-- END OF CONTAINER -->
 </div>
+<!-- END OF ARTIST LIST -->
