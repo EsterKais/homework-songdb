@@ -9,10 +9,6 @@ class SongsController < ApplicationController
     artist_id = @song.artist_id
     @artist = Artist.find(artist_id)
     @songs = @artist.songs
-    # @songs = Song.find(:artist_id = artist_id)
-
-    # @artist = Artist.find(params[id: artist_id])
-
   end
 
   def delete
@@ -23,7 +19,9 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     @song.destroy
 
-    @songs = Song.all
+    artist_id = @song.artist_id
+    @artist = Artist.find(artist_id)
+    @songs = @artist.songs
 
   end
 
