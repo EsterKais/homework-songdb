@@ -1,6 +1,12 @@
+<% if @artist.songs.any? %>
 <% @songs.each do |song, id| %>
   <tr>
     <td><%= song.name %></td>
     <td><%= link_to "Delete", "/songs/#{song.id}/delete", remote: true, class: "btn btn-danger" %></td>
-  </tr>
+    <tr>
+<% end %>
+<% else %>
+  <tr>
+    <td> No Songs to display. Go ahead and add new ones! </td>
+  <tr>
 <% end %>

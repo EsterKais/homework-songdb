@@ -24,16 +24,6 @@ class SongsController < ApplicationController
     @songs = @artist.songs
   end
 
-  def delete_all
-    @song = Song.find(params[:song_id])
-  end
-
-  def destroy_all
-    @song = Song.find(params[:id])
-    artist_id = @song.artist_id
-    @artist = Artist.find(artist_id)
-    @artist.songs.each(&:destroy)
-  end
 
   private
     def song_params

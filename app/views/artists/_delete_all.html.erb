@@ -9,7 +9,7 @@
 
   </div>
   <div class="modal-footer">
-    <%= link_to "Yes, Delete All Songs", song_destroy_all_path(id: @song.id), method: :delete, remote: true, class: "btn btn-danger" %>
+    <%= link_to "Yes, Delete All Songs", artist_path(id: @artist.id), method: :delete, remote: true, class: "btn btn-danger" %>
     <%= link_to "No, Please Don't", "#", class: "btn btn-default", data: { dismiss: "modal" } %>
   </div>
   </div>
