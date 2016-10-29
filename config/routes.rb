@@ -19,8 +19,13 @@ Rails.application.routes.draw do
 
   resources :songs, only: [:new, :create, :destroy] do
     get 'delete'
+    get 'delete_all'
+    delete 'destroy_all'
+    # collection do
+    #   :destroy_all => :delete
+    # end
   end
-  
+
   resources :photos
 end
 

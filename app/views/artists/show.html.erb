@@ -20,5 +20,8 @@
       <%= render "/songs/show" %>
     </tbody>
   </table>
+  <% @songs.each do |song, id| %>
+    <td><%= link_to "Delete All", "/songs/#{song.id}/delete_all", remote: true, class: "btn btn-danger" %></td>
+  <% end %>
   <!-- <td><%#= link_to "Delete All", "/artists/#{@artist.id}/delete", remote: true, class: "btn btn-danger" %></td> -->
 <div id="song-modal" class="modal fade"></div>
