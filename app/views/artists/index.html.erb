@@ -1,20 +1,26 @@
-<h1> Artists </h1>
-  <h2> Order By: </h2>
-<!-- FILTERING -->
-    <%= link_to "Name", order_by_name_artists_path %>
-    <%= link_to "Date Added", order_by_date_artists_path %>
-<!-- END OF FILTERING -->
+<div class="container">
+  <h1> Artists </h1>
+    <div class="filtering">
+      <div class="filtering-header"> Order By: </div>
+  <!-- FILTERING -->
+        <ul class="filter-items">
+          <li><%= link_to "Name", order_by_name_artists_path %></li>
+          <li><%= link_to "Date Added", order_by_date_artists_path %></li>        </ul>
+    </div>
+  <!-- END OF FILTERING -->
 
-<!-- ARTIST LIST -->
-    <ul>
-      <% @artists.each do |artist| %>
-        <% @artist = artist %>
-        <li>
-          <%= link_to artist.name, artist_path(artist.id) %>
-            <% @artist.photos.each do |photo| %>
-              <%= image_tag photo.artist_image %>
-            <% end %>
-        </li>
-      <% end %>
-    </ul>
-<!-- END OF ARTIST LIST -->
+  <!-- ARTIST LIST -->
+      <ul>
+        <% @artists.each do |artist| %>
+          <% @artist = artist %>
+          <li>
+            <%= link_to artist.name, artist_path(artist.id) %>
+              <% @artist.photos.each do |photo| %>
+                <%= image_tag photo.artist_image %>
+              <% end %>
+          </li>
+        <% end %>
+      </ul>
+  <!-- END OF ARTIST LIST -->
+  <!-- END OF CONTAINER -->
+</div>
