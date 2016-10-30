@@ -9,11 +9,10 @@ feature 'Manage songs', js: true do
       artist.save
 
     # Point your browser towards the artist show page
-      visit "/artists/#{artist.id}"
+    visit "/artists/#{artist.id}"
 
     # Enter description in the text field
     fill_in 'Name', with: 'Best Song Ever'
-
 
     # Press enter (to submit the form)
     page.execute_script("$('form').submit()")
